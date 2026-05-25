@@ -1486,8 +1486,16 @@ body {
 }
 
 /* ================================================================
-   RESPONSIVE DESIGN
-   ================================================================ */
+    RESPONSIVE DESIGN
+    ================================================================ */
+
+/* Mobile Video Optimization */
+@media (max-width: 768px) {
+  .hero-video {
+    object-position: center;
+    object-fit: cover;
+  }
+}
 
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
@@ -1592,11 +1600,22 @@ body {
 
 /* Mobile (<768px) */
 @media (max-width: 768px) {
+  /* Hero: Muestra solo poster en móvil, no el video */
+  .hero-video {
+    display: none;
+  }
+
+  .hero-background {
+    background-image: url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
   .hero-content {
-    max-width: 85%;
-    padding: 40px 20px;
+    max-width: 90%;
+    padding: 30px 15px;
     position: absolute;
-    bottom: 80px;
+    bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -1604,11 +1623,28 @@ body {
   .hero-overlay {
     background: linear-gradient(
       180deg,
-      rgba(8, 8, 11, 0) 0%,
-      rgba(8, 8, 11, 0.25) 35%,
-      rgba(8, 8, 11, 0.65) 60%,
-      rgba(8, 8, 11, 0.85) 100%
+      rgba(8, 8, 11, 0.3) 0%,
+      rgba(8, 8, 11, 0.5) 35%,
+      rgba(8, 8, 11, 0.75) 60%,
+      rgba(8, 8, 11, 0.9) 100%
     );
+  }
+
+  .accent-line {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+  }
+
+  .heading-main {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  .heading-secondary {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+  }
+
+  .subtitle {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    max-width: 100%;
   }
 
   .scroll-accent {
@@ -1616,14 +1652,59 @@ body {
     left: 20px;
   }
 
+  /* Vision Section - Mobile optimization */
+  .vision-section {
+    height: auto;
+    min-height: 60vh;
+    padding: 60px 0;
+  }
+
+  .vision-background {
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .vision-image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Technology Section - Mobile optimization */
+  .tech-sticky-wrapper {
+    min-height: auto;
+  }
+
+  .tech-image-container {
+    height: 40vh;
+    min-height: 250px;
+  }
+
+  .tech-image {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .tech-content {
+    padding: 40px 5%;
+    gap: 100px;
+  }
+
   .capabilities-section,
   .process-section,
   .final-cta-section {
-    padding: 80px 5%;
+    padding: 60px 5%;
   }
 
   .section-heading-area {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+  }
+
+  .section-heading {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .section-accent {
+    font-size: clamp(0.85rem, 1.2vw, 0.95rem);
   }
 
   .button-group {
@@ -1703,7 +1784,50 @@ body {
   .stat-item {
     border-right: none !important;
     border-bottom: none !important;
-    padding: 30px;
+    padding: 25px 15px;
+  }
+
+  .stat-number {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  /* Fix para bento cards en móvil */
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  /* Fix para servicios cards */
+  .servicio-card {
+    padding: 24px;
+  }
+
+  .servicio-title {
+    font-size: 1.1rem;
+  }
+
+  .servicio-desc {
+    font-size: 0.9rem;
+  }
+
+  /* Fix para FAQ */
+  .faq-item {
+    padding: 18px;
+  }
+
+  .faq-pregunta {
+    font-size: 1rem;
+  }
+
+  .faq-respuesta {
+    font-size: 0.85rem;
   }
 }
 
